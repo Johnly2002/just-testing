@@ -43,5 +43,6 @@ jobs:
 
     - name: Commit changes
       run: |
-        git commit -am "Update file"
-        git push -u  origin "Atlas_adoption"
+        git add .
+        git commit -m "Update file"
+        git push -u origin "Atlas_adoption"
