@@ -22,7 +22,7 @@ def rename_xml_files(file_name):
             break
         y += 1
 
-    root[x][y].text = '8.00.9999999-SNAPSHOT'
+    root[x][y].text = '9.00.9999999-SNAPSHOT'
     print(root[x][y].text)
    
     # Write changes back to the file
@@ -39,9 +39,9 @@ def update_omni_repo(omni_dependency_file, target_branch):
     with open(omni_dependency_file, 'w') as configfile:
         config.write(configfile)
 
-xml_file_paths = ['Hackathon_demo/dependencies_files/test_xml.xml', 'dependencies_files2/test_xml2.xml']
+xml_file_paths = ['Hackathon_demo/dependencies_files/test_xml.xml', 'Hackathon_demo/dependencies_files2/test_xml2.xml']
 
 for file in xml_file_paths:
     rename_xml_files(file)
 
-update_omni_repo('omni_dependency_file/dependencies.repo', 'rel/8.60/YUM/Build/0484xxx/')
+update_omni_repo('Hackathon_demo/omni_dependency_file/dependencies.repo', 'rel/8.60/YUM/Build/xxx4xxx/')
