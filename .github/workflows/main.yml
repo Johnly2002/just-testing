@@ -38,6 +38,7 @@ jobs:
         pip install requests
         pip install configparser
         pip install elementpath
+        pip install lxml
 
     - name: Run script
       run: python Hackathon_demo/config.py
