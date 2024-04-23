@@ -23,8 +23,8 @@ jobs:
     
     - name: Delete and create a branch
       run: |
-        git branch -D "Atlas_adoption" || true
-        git checkout -b "Atlas_adoption"
+        git branch -D "Atlas_adoption_1" || true
+        git checkout -b "Atlas_adoption_1"
           
 
     - name: Set up Python
