@@ -39,7 +39,7 @@ def update_omni_repo(omni_dependency_file, target_branch):
     with open(omni_dependency_file, 'w') as configfile:
         config.write(configfile)
 
-xml_file_paths = ['dependencies_files/test_xml.xml', 'dependencies_files2/test_xml2.xml']
+xml_file_paths = ['Hackathon_demo/dependencies_files/test_xml.xml', 'dependencies_files2/test_xml2.xml']
 
 for file in xml_file_paths:
     rename_xml_files(file)
