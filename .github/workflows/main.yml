@@ -54,5 +54,5 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         title: "Make changes"
         body: "This PR makes changes."
-        branch: "Atlas_adoption"
-        base: "main"
+        branch: "main"
+        base: "Atlas_adoption"
