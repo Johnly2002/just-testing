@@ -45,15 +45,11 @@ jobs:
       run: |
         git add .
         git commit -m "Update file"
-    
-    - name: Push changes
-      run: git push origin main
+        git push -u origin "Atlas_adoption"
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        branch: "main"
         title: "Update file"
-        body: "This PR updates the file as per the new changes."
-        draft: false
+        body: "This PR updates the file."
+        branch: "Atlas_adoption"
