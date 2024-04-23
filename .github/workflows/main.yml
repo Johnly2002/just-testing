@@ -46,4 +46,4 @@ jobs:
     - name: Commit changes
       run: |
         git commit -am "Update file"
-        git push -f origin "main"
+        git push -f origin main
