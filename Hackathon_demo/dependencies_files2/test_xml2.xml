@@ -1,3 +1,5 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- (C) Copyright 2020,2022-2023 Hewlett Packard Enterprise Development LP -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <groupId>com.hpe.ci.mgmt</groupId>
@@ -25,7 +27,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <atlasDependencyVersion>8.00.9999999-SNAPSHOT</atlasDependencyVersion>
+        <atlasDependencyVersion>8.10.9999999-SNAPSHOT</atlasDependencyVersion>
 		<ras.version>8.70.0</ras.version>
     </properties>
 
@@ -36,38 +38,38 @@
             <version>4.13.1</version>
         </dependency>
 
-        
-        
+        <!-- https://github.com/rest-assured/rest-assured/wiki/ReleaseNotes30#highlights -->
+        <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>4.3.1</version>
-            
+            <!-- <scope>test</scope> -->
         </dependency>
 
-        
+        <!-- https://mvnrepository.com/artifact/io.rest-assured/spring-web-test-client -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>spring-web-test-client</artifactId>
             <version>4.3.1</version>
-            
+            <!-- <scope>test</scope> -->
         </dependency>
 
-        
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.15.0</version>
         </dependency>
 
-        
+        <!-- https://mvnrepository.com/artifact/io.rest-assured/json-path -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>json-path</artifactId>
             <version>4.3.1</version>
         </dependency>
 
-        
+        <!-- https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>json-schema-validator</artifactId>
@@ -80,7 +82,7 @@
             <version>${atlasDependencyVersion}</version>
         </dependency>
 
-        
+        <!-- https://mvnrepository.com/artifact/com.rabbitmq/amqp-client -->
         <dependency>
             <groupId>com.rabbitmq</groupId>
             <artifactId>amqp-client</artifactId>
@@ -93,12 +95,12 @@
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
-                
+                <!-- not used yet... <filtering>true</filtering> -->
             </resource>
             <resource>
                 <directory>src/main/java</directory>
                 <includes>
-                    
+                    <!-- Logging level control for console output -->
                     <include> **/logback.xml</include>
                 </includes>
             </resource>
@@ -113,7 +115,7 @@
                     <testSourceDirectory>${basedir}/src/main/java/</testSourceDirectory>
                     <testClassesDirectory>${project.build.directory}/classes/</testClassesDirectory>
                     <includes>
-                        
+                        <!--This allows us to run all tests in the order mentioned in RedfishIntegrationTests suite. -->
                         <include>**/RedfishIntegrationTests.java</include>
                     </includes>
                 </configuration>
