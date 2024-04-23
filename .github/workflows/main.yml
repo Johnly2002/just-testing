@@ -16,16 +16,6 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Git
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-    
-    - name: Create a branch
-      run: |
-        git checkout -b "Atlas_adoption"
-          
-
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -42,5 +32,8 @@ jobs:
       run: python Hackathon_demo/config.py
 
     - name: Commit changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
         git commit -am "Update file"
-        git push -u  origin "Atlas_adoption"
+        git push
