@@ -50,8 +50,10 @@ jobs:
         git push -f origin "Atlas_adoption_1"
     
     - name: Create Pull Request
-      uses: CasperWA/push-protected@v2
+      uses: peter-evans/create-pull-request@v3
       with:
-        token: ${{ secrets.PUSH_TO_PROTECTED_BRANCH }}
-        branch: main
-        unprotect_reviews: true
+        token: ${{ secrets.GITHUB_TOKEN }}
+        title: "Make changes"
+        body: "This PR makes changes."
+        branch: "main"
+        base: "Atlas_adoption_1"
