@@ -46,4 +46,12 @@ jobs:
     - name: Commit changes
       run: |
         git commit -am "Update file"
-        git push origin main
+        git push -u origin "Atlas_adoption"
+    
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v3
+      with:
+        title: "Make changes"
+        body: "This PR makes changes."
+        branch: "my-branch"
+        base: "main"
