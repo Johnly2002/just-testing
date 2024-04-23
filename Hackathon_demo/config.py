@@ -5,7 +5,8 @@ ET.register_namespace('', "http://maven.apache.org/POM/4.0.0")
 
 def rename_xml_files(file_name):
     # Parse the XML file
-    tree = ET.parse(file_name)
+    parser = ET.XMLParser(target=ET.TreeBuilder(insert_comments=True))
+    tree = ET.parse(file_name, parser)
 
     # Get the root element
     root = tree.getroot()
@@ -22,7 +23,7 @@ def rename_xml_files(file_name):
             break
         y += 1
 
-    root[x][y].text = '9.40.9999999-SNAPSHOT'
+    root[x][y].text = '8.00.9999999-SNAPSHOT'
     print(root[x][y].text)
    
     # Write changes back to the file
@@ -39,9 +40,9 @@ def update_omni_repo(omni_dependency_file, target_branch):
     with open(omni_dependency_file, 'w') as configfile:
         config.write(configfile)
 
-xml_file_paths = ['Hackathon_demo/dependencies_files/test_xml.xml', 'Hackathon_demo/dependencies_files2/test_xml2.xml']
+xml_file_paths = ['dependencies_files/test_xml.xml', 'dependencies_files2/test_xml2.xml']
 
 for file in xml_file_paths:
     rename_xml_files(file)
 
-update_omni_repo('Hackathon_demo/omni_dependency_file/dependencies.repo', 'rel/8.60/YUM/Build/xx34xxx/')
+update_omni_repo('omni_dependency_file/dependencies.repo', 'rel/8.60/YUM/Build/0484xxx/')
