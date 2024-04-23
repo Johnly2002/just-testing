@@ -53,3 +53,4 @@ jobs:
         title: "Update file"
         body: "This PR updates the file."
         branch: "Atlas_adoption"
+        base: "main"
