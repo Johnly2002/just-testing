@@ -45,4 +45,4 @@ jobs:
       run: |
         git add .
         git commit -m "Update file"
-        git push
+        git push origin/main
