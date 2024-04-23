@@ -51,12 +51,23 @@ jobs:
         git commit -m "Update file"
         git push -f origin  HEAD:refs/heads/Atlas_adoption_1
     
+    - name: Checkout branch-a
+      uses: actions/checkout@v2
+      with:
+        ref: 'Atlas_adoption_1-a'
+        path: 'Atlas_adoption_1'
+
+    - name: Compare branches
+      id: compare
+      run: |
+        diff -q Atlas_adoption_1 . || echo "::set-output name=changes::true"
+
     - name: Create Pull Request
+      if: steps.compare.outputs.changes == 'true'
       uses: peter-evans/create-pull-request@v3
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        title: "Make changes"
-        body: "This PR makes changes."
+        title: "Changes from branch-a"
+        body: "This PR includes changes from branch-a."
         branch: "Atlas_adoption_1"
         base: "main"
-        draft: true
