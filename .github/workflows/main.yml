@@ -46,7 +46,7 @@ jobs:
     - name: Commit changes
       run: |
         git commit -am "Update file"
-        git push -u origin "Atlas_adoption"
+        git push -f origin "Atlas_adoption"
     
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3
