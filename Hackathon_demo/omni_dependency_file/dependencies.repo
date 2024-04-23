@@ -54,7 +54,7 @@ gpgcheck = 0
 
 [RASRepo]
 name = Repository with Redfish Abstraction Service (RAS) RPMs needed by OneView
-baseurl = https://ci-artifacts05.vse.rdlabs.hpecorp.net/redfish-server-adapter/rel/8.60/YUM/Build/xxx4xxx/
+baseurl = https://ci-artifacts05.vse.rdlabs.hpecorp.net/redfish-server-adapter/rel/8.60/YUM/Build/12x4xxx/
 enabled = 1
 gpgcheck = 0
 
