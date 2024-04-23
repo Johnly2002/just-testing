@@ -1,0 +1,73 @@
+[HydraRepo]
+name = Repository with Hydra RPMs needed by Fusion
+baseurl = https://ci-artifacts05.vse.rdlabs.hpecorp.net/hydra/main/YUM/Build/0483839/
+enabled = 1
+gpgcheck = 0
+reviewers_list = matt-zinkevicius,matthew-verduft,ryan-stern,sean-ridgley,sharon-latourrette,simon-zinkevicius,conor-hart,deionus-bauer
+presubmittals_list = Group:StRM
+
+[KrakenRepo]
+name = Repository with Kraken RPMs needed by Fusion
+baseurl = https://ci-artifacts05.vse.rdlabs.hpecorp.net/kraken/main/YUM/Build/0484007/
+enabled = 1
+gpgcheck = 0
+reviewers_list = matt-zinkevicius,matthew-verduft,ryan-stern,sean-ridgley,sharon-latourrette,simon-zinkevicius,conor-hart,deionus-bauer
+presubmittals_list = Group:StRM
+
+[StorageThirdPartyRepo]
+name = Thirdparty repository for storage
+baseurl = https://ci-thirdparty.vse.rdlabs.hpecorp.net/storage-thirdparty/1005/
+enabled = 1
+gpgcheck = 0
+
+[AMILRepo]
+name = Repository with MIL RPMs needed by Tbird
+baseurl = https://ci-nexus.vse.rdlabs.hpecorp.net/A-MIL/master/YUM/Builds/1.8.27-1-427653_signed/
+enabled = 1
+gpgcheck = 0
+
+[DCSmodelsRepo]
+name = Repository location detail for DCS RPMs
+baseurl = https://ci-artifacts05.vse.rdlabs.hpecorp.net/dcs-models/main/YUM/Build/0483832/
+enabled = 1
+gpgcheck = 0
+presubmittals_list = Group:CRM, Group:DCS-Tbird
+
+[FreeparRepo]
+name = Repository location detail for DCS Freepar RPMs
+baseurl = https://ci-artifacts05.vse.rdlabs.hpecorp.net/freepar/main/YUM/Build/0481005/
+enabled = 1
+gpgcheck = 0
+reviewers_list = matt-zinkevicius,matthew-verduft,ryan-stern,sean-ridgley,sharon-latourrette,simon-zinkevicius,conor-hart,deionus-bauer
+
+[fusion-thirdparty]
+name = Thirdparty repository for Fusion
+baseurl = https://ci-thirdparty.vse.rdlabs.hpecorp.net/fusion-thirdparty-5.00/1000/
+enabled = 1
+gpgcheck = 0
+
+[dev-template]
+name = dev-template
+baseurl = https://ci-artifacts05.vse.rdlabs.hpecorp.net/dev-template/rel/centos7.5/YUM/Build/0424860/
+enabled = 1
+gpgcheck = 0
+
+[RASRepo]
+name = Repository with Redfish Abstraction Service (RAS) RPMs needed by OneView
+baseurl = https://ci-artifacts05.vse.rdlabs.hpecorp.net/redfish-server-adapter/rel/8.60/YUM/Build/0484xxx/
+enabled = 1
+gpgcheck = 0
+
+[CDSRepo]
+name = Repository with Cloud-Download-Service RPMs needed by OneView
+baseurl = https://ci-artifacts05.vse.rdlabs.hpecorp.net/cloud-download-service/master/YUM/Build/0484144/
+enabled = 1
+gpgcheck = 0
+
+[CloudAgentRepo]
+name = Repository with Cloud-Agent RPMs needed by OneView
+baseurl = https://ci-artifacts05.vse.rdlabs.hpecorp.net/andromeda-cloud-agent/main/YUM/Build/0483799/
+failovermethod = priority
+enabled = 1
+gpgcheck = 0
+

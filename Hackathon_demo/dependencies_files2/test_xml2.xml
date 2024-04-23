@@ -1,0 +1,145 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <groupId>com.hpe.ci.mgmt</groupId>
+    <modelVersion>4.0.0</modelVersion>
+    <version>${ras.version}-SNAPSHOT</version>
+    <artifactId>redfish-server-adapter-integration-tests</artifactId>
+    <packaging>jar</packaging>
+
+    <organization>
+        <name>Hewlett Packard Enterprise</name>
+        <url>www.hpe.com</url>
+    </organization>
+
+    <contributors>
+        <contributor>
+            <name>OV Components Team</name>
+            <email>ov-components-se-in@hpe.com</email>
+            <organization>HPE</organization>
+        </contributor>
+    </contributors>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <atlasDependencyVersion>8.00.9999999-SNAPSHOT</atlasDependencyVersion>
+		<ras.version>8.70.0</ras.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.1</version>
+        </dependency>
+
+        
+        
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>4.3.1</version>
+            
+        </dependency>
+
+        
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>spring-web-test-client</artifactId>
+            <version>4.3.1</version>
+            
+        </dependency>
+
+        
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.15.0</version>
+        </dependency>
+
+        
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-path</artifactId>
+            <version>4.3.1</version>
+        </dependency>
+
+        
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>4.3.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hp.ci.platform.lib</groupId>
+            <artifactId>common-model</artifactId>
+            <version>${atlasDependencyVersion}</version>
+        </dependency>
+
+        
+        <dependency>
+            <groupId>com.rabbitmq</groupId>
+            <artifactId>amqp-client</artifactId>
+            <version>5.8.0</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    
+                    <include> **/logback.xml</include>
+                </includes>
+            </resource>
+
+        </resources>
+
+        <plugins>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <configuration>
+                    <testSourceDirectory>${basedir}/src/main/java/</testSourceDirectory>
+                    <testClassesDirectory>${project.build.directory}/classes/</testClassesDirectory>
+                    <includes>
+                        
+                        <include>**/RedfishIntegrationTests.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>native2ascii-maven-plugin</artifactId>
+                <groupId>org.codehaus.mojo</groupId>
+                <version>1.0-alpha-1</version>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <phase>native2ascii</phase>
+                        <goals>
+                            <goal>native2ascii</goal>
+                        </goals>
+                        <configuration>
+                            <dest>target/resources</dest>
+                            <src>src/main/resources</src>
+                            <encoding>UTF8</encoding>
+                            <includes>ApplicationResources*.properties,
+                                errors.properties,
+                                /template/email/newBooking*.ftl</includes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
