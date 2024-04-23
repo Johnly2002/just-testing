@@ -21,8 +21,9 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
     
-    - name: Create a branch
+    - name: Delete and create a branch
       run: |
+        git branch -D "Atlas_adoption" || true
         git checkout -b "Atlas_adoption"
           
 
