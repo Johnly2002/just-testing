@@ -54,7 +54,7 @@ jobs:
     - name: Checkout branch-a
       uses: actions/checkout@v2
       with:
-        ref: 'Atlas_adoption_1-a'
+        ref: 'Atlas_adoption_1'
         path: 'Atlas_adoption_1'
 
     - name: Compare branches
