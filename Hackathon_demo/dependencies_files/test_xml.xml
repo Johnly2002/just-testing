@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <!-- (C) Copyright 2020-2023 Hewlett Packard Enterprise Development LP -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <atlasDependencyVersion>8.70.9999999-SNAPSHOT</atlasDependencyVersion>
+        <atlasDependencyVersion>8.10.9999999-SNAPSHOT</atlasDependencyVersion>
         <ras.version>8.70.0</ras.version>
     </properties>
     <version>${ras.version}-SNAPSHOT</version>
