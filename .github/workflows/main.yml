@@ -22,6 +22,8 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
+        gh issue --repo ${{ github.repository }} \
+          create --title "Issue title" --body "Issue body"
     
     - name: Delete and create a branch
       run: |
