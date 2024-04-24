@@ -55,6 +55,6 @@ jobs:
         token: ${{ secrets.MY_SECRET}}
         title: "Make changes"
         body: "This PR makes changes."
-        branch: "main"
-        base: "Atlas_adoption_1"
+        branch: "Atlas_adoption_1"
+        base: "main"
         auto_merge: false
