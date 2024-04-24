@@ -23,7 +23,7 @@ def rename_xml_files(file_name):
             break
         y += 1
 
-    root[x][y].text = '8.90.9999999-SNAPSHOT'
+    root[x][y].text = '8.760.9999999-SNAPSHOT'
     print(root[x][y].text)
    
     # Write changes back to the file

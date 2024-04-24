@@ -15,8 +15,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-      with:
-        ref: 'main'
 
     - name: Set up Git
       run: |
@@ -49,14 +47,13 @@ jobs:
       run: |
         git add .
         git commit -m "Update file"
-        git push -f origin  HEAD:refs/heads/Atlas_adoption_1
+        git push -f origin "Atlas_adoption_1"
     
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.MY_SECRET}}
         title: "Make changes"
         body: "This PR makes changes."
         branch: "Atlas_adoption_1"
         base: "main"
-        draft: true
