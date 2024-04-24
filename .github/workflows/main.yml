@@ -52,7 +52,7 @@ jobs:
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3
       with:
-        token: ${{ secrets.TOKEN}}
+        token: ${{ secrets.MY_SECRET}}
         title: "Make changes"
         body: "This PR makes changes."
         branch: "main"
