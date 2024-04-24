@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <atlasDependencyVersion>8.80.9999999-SNAPSHOT</atlasDependencyVersion>
+        <atlasDependencyVersion>8.90.9999999-SNAPSHOT</atlasDependencyVersion>
         <ras.version>8.70.0</ras.version>
     </properties>
     <version>${ras.version}-SNAPSHOT</version>
