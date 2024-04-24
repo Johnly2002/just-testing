@@ -15,15 +15,11 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-      with:
-        ref: 'main'
 
     - name: Set up Git
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        gh issue --repo ${{ github.repository }} \
-          create --title "Issue title" --body "Issue body"
     
     - name: Delete and create a branch
       run: |
@@ -51,25 +47,13 @@ jobs:
       run: |
         git add .
         git commit -m "Update file"
-        git push -f origin  HEAD:refs/heads/Atlas_adoption_1
+        git push -f origin "Atlas_adoption_1"
     
-    - name: Checkout branch-a
-      uses: actions/checkout@v2
-      with:
-        ref: 'Atlas_adoption_1'
-        path: 'Atlas_adoption_1'
-
-    - name: Compare branches
-      id: compare
-      run: |
-        diff -q Atlas_adoption_1 . || echo "::set-output name=changes::true"
-
     - name: Create Pull Request
-      if: steps.compare.outputs.changes == 'true'
       uses: peter-evans/create-pull-request@v3
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        title: "Changes from branch-a"
-        body: "This PR includes changes from branch-a."
-        branch: "Atlas_adoption_1"
-        base: "main"
+        token: ${{ secrets.TOKEN}}
+        title: "Make changes"
+        body: "This PR makes changes."
+        branch: "main"
+        base: "Atlas_adoption_1"
