@@ -52,6 +52,5 @@ jobs:
     - name: Create Pull Request
       uses: repo-sync/pull-request@v2
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
         source_branch: Atlas_adoption_1
         destination_branch: main
