@@ -60,7 +60,7 @@ def update_ras_files():
         # Write changes back to the file
         tree.write(file_name, xml_declaration=True, encoding='UTF-8', standalone= False, pretty_print=True)
 
-   xml_file_paths = ['Hackathon_demo/dependencies_files/test_xml.xml', 'Hackathon_demo/dependencies_files2/test_xml2.xml']
+    xml_file_paths = ['Hackathon_demo/dependencies_files/test_xml.xml', 'Hackathon_demo/dependencies_files2/test_xml2.xml']
 
     for file in xml_file_paths:
         rename_xml_files(file)
